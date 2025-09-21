@@ -12,15 +12,16 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #f8b5c1 100%);
             min-height: 100vh;
-            color: white;
+            color: #2d3748;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
@@ -32,38 +33,63 @@
         }
 
         .title {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FF6347);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #4a5568;
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            opacity: 0.9;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #718096;
+            font-weight: 300;
         }
 
-        .special-message {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        .main-message {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px;
+            margin: 50px auto;
+            max-width: 700px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
             animation: fadeInUp 1s ease-out 0.5s both;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .main-message p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+        
+        .main-message .highlight {
+            font-weight: 600;
+            color: #e53e3e;
         }
 
         .video-container {
-            margin: 40px 0;
-            border-radius: 20px;
+            margin: 60px auto;
+            max-width: 800px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
             animation: fadeInUp 1s ease-out 1s both;
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+        }
+        
+        .video-container h3 {
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .video-container iframe {
+            border-radius: 16px;
         }
 
         .video-placeholder {
@@ -130,12 +156,56 @@
             animation: fadeInLeft 1s ease-out 2.5s both;
         }
 
+        .photos-section {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 700px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out 1.5s both;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .photos-section h3 {
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+        
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .photo-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
         .footer {
-            margin-top: 50px;
-            padding: 30px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 20px;
-            animation: fadeInUp 1s ease-out 3s both;
+            margin-top: 60px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 2.5s both;
+            color: #4a5568;
         }
 
         @keyframes fadeInDown {
@@ -183,15 +253,47 @@
 
         @media (max-width: 768px) {
             .title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
             }
             
             .container {
                 padding: 15px;
             }
             
-            .special-message, .personal-note {
-                padding: 20px;
+            .main-message {
+                padding: 30px 25px;
+                margin: 30px auto;
+            }
+            
+            .main-message p {
+                font-size: 1rem;
+            }
+            
+            .video-container {
+                margin: 40px auto;
+                padding: 15px;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+            
+            .photos-section {
+                padding: 25px 20px;
+                margin: 30px auto;
+            }
+            
+            .photos-grid {
+                gap: 10px;
+            }
+            
+            .photo-item img {
+                height: 120px;
             }
         }
 
@@ -212,78 +314,56 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1 class="title">Happy Birthday Deepali! <span class="sparkle">✨</span></h1>
-            <div class="birthday-emojis">🎉 🎂 🏃‍♀️ 🏊‍♀️ 📚 🎓</div>
-            <p class="subtitle">From your best friend who's been with you through thick and thin</p>
+            <h1 class="title">🎉 Happy Birthday, Deepali! ✨</h1>
+            <p class="subtitle">🏃‍♀️ 🏊‍♀️ 🎓 📚 🎥</p>
         </header>
 
-        <div class="special-message">
-            <h2>A Special Video Message Just For You! 🎬</h2>
-            <p>I created something special - running in the shape of each letter of your name: <strong>D-E-E-P-A-L-I</strong></p>
-            <p>Because you always say "your personality is running" - this one's for you! 🏃‍♀️💕</p>
+        <div class="main-message">
+            <p>You say your personality is running — so I ran your name.</p>
+            <p>Letter by letter. <span class="highlight">D-E-E-P-A-L-I.</span> 🏃‍♀️💛</p>
+            
+            <p>From school friends in India ➝ to you smashing life in the UK on a 100% scholarship ➝ to now, creating amazing content and inspiring everyone — it's been wild watching you grow.</p>
+            
+            <p>You've always been my athlete, my genius, my favorite troublemaker.</p>
+            <p>And today, my birthday girl. 🎂</p>
+            
+            <p style="margin-top: 30px; font-style: italic; color: #718096;">Click play — this one's just for you. 🎬</p>
         </div>
 
         <!-- Your Special Running Video -->
         <div class="video-container">
-            <h3 style="margin-bottom: 20px; color: #FFD700;">🏃‍♀️ Running in the Shape of Your Name: D-E-E-P-A-L-I</h3>
             <iframe 
                 src="https://drive.google.com/file/d/1tt-A_SfLz_Ij6IYWjBGtODf9boOWuwVg/preview" 
                 width="100%" 
                 height="480" 
                 frameborder="0" 
                 allowfullscreen
-                style="border-radius: 15px;">
+                style="border-radius: 16px;">
             </iframe>
-            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">
-                A special video message created just for you - each letter of your name traced by running! 💕
-            </p>
         </div>
 
-        <div class="achievements">
-            <div class="achievement-card">
-                <div class="achievement-icon">🏊‍♀️</div>
-                <div class="achievement-title">National Level Swimmer</div>
-                <p>From the same school in India to making waves nationally!</p>
+        <!-- Our Friendship Memories -->
+        <div class="photos-section">
+            <h3>From school friends to forever 📸</h3>
+            <div class="photos-grid">
+                <div class="photo-item">
+                    <img src="images/IMG-20220424-WA0085.jpg" alt="Friendship memory" loading="lazy">
+                </div>
+                <div class="photo-item">
+                    <img src="images/IMG_3181.JPG" alt="Friendship memory" loading="lazy">
+                </div>
+                <div class="photo-item">
+                    <img src="images/764fd7a0-d1eb-46bb-b7ea-9a793ec2b97f.jpg" alt="Friendship memory" loading="lazy">
+                </div>
+                <div class="photo-item">
+                    <img src="images/IMG_1980.jpg" alt="Friendship memory" loading="lazy">
+                </div>
             </div>
-            
-            <div class="achievement-card">
-                <div class="achievement-icon">🎓</div>
-                <div class="achievement-title">100% Scholarship</div>
-                <p>Masters in Food & Economics at University of Reading, UK - fully funded!</p>
-            </div>
-            
-            <div class="achievement-card">
-                <div class="achievement-icon">🏃‍♀️</div>
-                <div class="achievement-title">Running Enthusiast</div>
-                <p>Your personality is running, and it shows in everything you do!</p>
-            </div>
-            
-            <div class="achievement-card">
-                <div class="achievement-icon">📱</div>
-                <div class="achievement-title">Content Creator</div>
-                <p>Creating amazing educational and sports content in the UK!</p>
-            </div>
-        </div>
-
-        <div class="running-quote">
-            "Your personality is running" - and watching you chase your dreams has been the most inspiring journey to witness! 🌟
-        </div>
-
-        <div class="personal-note">
-            <h2>From Your Best Friend 💕</h2>
-            <p>Deepali, we've grown up together, been through thick and thin, and I couldn't be prouder of the incredible woman you've become. From our school days in India to watching you excel in the UK on a full scholarship - you're absolutely unstoppable!</p>
-            
-            <p>Your dedication to running, swimming, academics, and creating content inspires everyone around you. You're not just studying food and economics - you're nourishing minds and bodies through your work!</p>
-            
-            <p>This birthday, I wanted to create something as unique and amazing as you are. Just like how you run with purpose and passion, I ran in the shape of each letter of your name because you deserve nothing less than a personalized celebration!</p>
-            
-            <p><strong>Here's to another year of you being absolutely phenomenal! 🎉</strong></p>
         </div>
 
         <footer class="footer">
-            <h3>Happy Birthday, Champion! 🏆</h3>
-            <p>Keep running towards your dreams - the world is lucky to have you!</p>
-            <p><em>With all my love and best wishes,<br>Your forever friend ❤️</em></p>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">Love,</p>
+            <p style="font-weight: 600; color: #e53e3e;">Your forever teammate ❤️</p>
         </footer>
     </div>
 
