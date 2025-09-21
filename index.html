@@ -282,10 +282,12 @@
         
         .photo-item img {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: auto;
+            min-height: 200px;
+            object-fit: contain;
             display: block;
             transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .photo-item:hover img {
@@ -419,7 +421,8 @@
             }
             
             .photo-item img {
-                height: 140px;
+                height: auto;
+                min-height: 160px;
             }
             
             .footer {
